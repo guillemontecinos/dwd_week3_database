@@ -18,16 +18,17 @@ client.connect()
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.get('/', function(req, res){
-    client.query('SELECT * FROM posts', (err, resSQL) => {
-        if (err) {
-          console.log(err.stack)
-        } else {
-            let someArray = resSQL.rows
-            res.render('index', {
-                someArray
-            });
-        }
-      })
+    // client.query('SELECT * FROM posts', (err, resSQL) => {
+    //     if (err) {
+    //       console.log(err.stack)
+    //     } else {
+    //         let someArray = resSQL.rows
+    //         res.render('index', {
+    //             someArray
+    //         });
+    //     }
+    //   })
+    res.send("hello world")
 })
 
 app.post('/post', function(req, res){
